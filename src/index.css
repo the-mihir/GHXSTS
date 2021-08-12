@@ -1,0 +1,225 @@
+:root {
+	--mainGreen: #4a9436;
+	--mainBlue: #2a2a72;
+	--lightBlue: #009ffd;
+	--mainWhite: #f3f3f3;
+	--mainDark: #232528;
+	--mainDark: #000;
+	--mainYellow: #ffa400;
+	--transition: all 0.3s linear;
+}
+
+@font-face {
+	font-family: '8-bit pusab';
+	src: local('8-bit pusab'),
+		url('../src/fonts/8-bit-pusab.ttf') format('truetype');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: '8_bit_1_6';
+	src: local('8_bit_1_6'), url('../src/fonts/8bit16.ttf') format('truetype');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Avenir LT Std 45 Book';
+	src: local('Avenir LT Std 45 Book'),
+		url('../src/fonts/Net-AvenirLTStd-Book.ttf') format('truetype');
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background-color: #1e1e1f !important;
+	color: #fff !important;
+	height: 100vh;
+}
+
+Link {
+	text-decoration: none;
+}
+/*  global css */
+
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+	letter-spacing: var(--spacing);
+	text-transform: capitalize;
+	line-height: 1.25;
+	margin-bottom: 0.75rem;
+}
+h1 {
+	font-size: 2.5rem;
+	font-family: '8-bit pusab';
+	text-transform: uppercase;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.25rem;
+}
+h4 {
+	font-size: 0.875rem;
+}
+
+p {
+	color: #fff;
+	font-family: 'Avenir LT Std 45 Book';
+}
+
+.example {
+	position: absolute !important;
+}
+
+/* =============================================== */
+
+/*
+=============== 
+Navbar
+===============
+*/
+nav {
+	background: #1e1e1f;
+	box-shadow: var(--light-shadow);
+	border-bottom: 4px solid var(--mainGreen);
+	padding: 0.5rem;
+}
+
+.nav-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+}
+.nav-toggle {
+	font-size: 2rem;
+	color: var(--clr-primary-5);
+	background: transparent;
+	border-color: transparent;
+	transition: var(--transition);
+	cursor: pointer;
+}
+
+/*======================  */
+.BurgerMenu__container {
+	display: flex;
+	flex-direction: column;
+	padding-left: 8px;
+}
+i {
+	background-color: #fff;
+	width: 32px;
+	height: 4px;
+	margin: 4px;
+	border-radius: 2px;
+	transition: all ease 0.5s;
+}
+.open:nth-child(1) {
+	transform: rotate(45deg) translateY(8px) translateX(8px);
+	background-color: #ff0015;
+}
+
+.open:nth-child(2) {
+	opacity: 0;
+}
+
+.open:nth-child(3) {
+	transform: rotate(-45deg) translateY(-8px) translateX(8px);
+	background-color: #ff0015;
+}
+
+.close:nth-child(1) {
+	transform: rotate(0) translateY(0);
+	background-color: #ffa400;
+	opacity: 1;
+}
+
+.close:nth-child(2) {
+	opacity: 1;
+}
+
+.close:nth-child(3) {
+	transform: rotate(0) translateY(0);
+	background-color: #009ffd;
+	opacity: 1;
+}
+/* ==================== */
+
+.logo {
+	height: 40px;
+}
+
+.links {
+	margin: 0.5rem 0;
+	margin-left: -2rem;
+}
+.links a {
+	color: #fff;
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: var(--spacing);
+	display: block;
+	padding: 0.5rem 0;
+	transition: var(--transition);
+	font-family: '8_bit_1_6';
+	text-decoration: none;
+}
+.links a:hover {
+	background: var(--clr-primary-8);
+	color: var(--clr-primary-5);
+	padding-left: 1.5rem;
+	text-decoration: none;
+}
+
+.links-container {
+	height: 0;
+	overflow: hidden;
+	transition: var(--transition);
+}
+.show-container {
+	height: 10rem;
+}
+@media screen and (min-width: 800px) {
+	.nav-center {
+		max-width: 1250px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0.5rem 0;
+	}
+	.nav-header {
+		padding: 0;
+	}
+	.nav-toggle {
+		display: none;
+	}
+	.links-container {
+		height: auto !important;
+	}
+	.links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+	.links a {
+		padding: 0;
+		margin: 0 2rem;
+	}
+	.links a:hover {
+		padding: 0;
+		background: transparent;
+	}
+}
